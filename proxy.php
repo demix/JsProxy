@@ -1,5 +1,10 @@
 <?php
 
+require_once('lib/config.php');
+require_once('lib/common.php');
+
+
+
 $manifest_path = dirname(__FILE__) .  '/manifest.json';
 if(!file_exists($manifest_path)){
   throw new Exception('Must have manifest.json in your root folder.');
@@ -175,10 +180,8 @@ Class Proxy{
 
   private function injectFunc($matches){
     $file_path = $this->manifest['file_inject'][strtolower($matches[1])];
-    if( file_exists($file_path) ){
-      $file = file_get_contents($file_path);
-      return $file;
-    }
+    $file = file_get_contents($file_path);
+    return $file;
   }
 
   public function printScript(){
@@ -212,16 +215,21 @@ if( isset($argv) ){
 
     foreach( $manifest['sources'] as $item=>$value ){
       $file = new Proxy($item , $replace);
-      $fp = @fopen( $target . '/' . $item . '.js' , 'w' );
+      $file_name = $target . '/' . $item . '.js';
+      $fp = @fopen( $file_name , 'w' );
       @fwrite($fp , $file->getScript());
       @fclose($fp);
+      glint($file_name);
     }
+    echo "jsdoc ing...\n";
+    jsdoc($target);
   }else{
     $proxy = new Proxy($source_pkg , $replace);
     
     $fp = @fopen($target , 'w');
     @fwrite($fp , $proxy->getScript());
     @fclose($fp);
+    glint($target);
   }
 
 }else{
@@ -235,6 +243,7 @@ if( isset($argv) ){
     $proxy = new Proxy();
   }
   $proxy->printScript();
+  
 }
 
 

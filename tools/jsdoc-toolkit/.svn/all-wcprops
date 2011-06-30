@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/!svn/ver/78944/doc/zhengxin/proxy/tools/jsdoc-toolkit
+END
+changes.txt
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/78944/doc/zhengxin/proxy/tools/jsdoc-toolkit/changes.txt
+END
+jsrun.sh
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/78944/doc/zhengxin/proxy/tools/jsdoc-toolkit/jsrun.sh
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/78944/doc/zhengxin/proxy/tools/jsdoc-toolkit/README.txt
+END
+jsrun.jar
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/!svn/ver/78944/doc/zhengxin/proxy/tools/jsdoc-toolkit/jsrun.jar
+END
+jsdebug.jar
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/78944/doc/zhengxin/proxy/tools/jsdoc-toolkit/jsdebug.jar
+END
